@@ -14,8 +14,8 @@ import java.util.*;
 /**
  * @author Stan Hebben
  */
-@ZenClass("crafttweaker.entity.IEntityDefinition")
 @ZenRegister
+@ZenClass("crafttweaker.entity.IEntityDefinition")
 public interface IEntityDefinition {
     
     @ZenGetter("id")

@@ -9,8 +9,8 @@ import stanhebben.zenscript.annotations.*;
 /**
  * @author Stan
  */
-@ZenClass("crafttweaker.event.PlayerFillBucketEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerFillBucketEvent")
 public interface PlayerFillBucketEvent extends IEventCancelable, IPlayerEvent, IProcessableEvent, IEventPositionable {
     
     @ZenGetter("result")

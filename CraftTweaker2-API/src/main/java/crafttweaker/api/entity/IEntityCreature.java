@@ -4,8 +4,8 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.world.IBlockPos;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.entity.IEntityCreature")
 @ZenRegister
+@ZenClass("crafttweaker.entity.IEntityCreature")
 public interface IEntityCreature extends IEntityLiving {
 
     @ZenGetter

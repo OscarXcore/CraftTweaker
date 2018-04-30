@@ -4,8 +4,8 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.player.IPlayer;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.entity.IEntityLiving")
 @ZenRegister
+@ZenClass("crafttweaker.entity.IEntityLiving")
 public interface IEntityLiving extends IEntityLivingBase {
     
     @ZenGetter("attackTarget")

@@ -11,8 +11,8 @@ import stanhebben.zenscript.annotations.*;
  *
  * @author Stan
  */
-@ZenClass("crafttweaker.events.IEventManager")
 @ZenRegister
+@ZenClass("crafttweaker.events.IEventManager")
 public interface IEventManager {
     
     @ZenMethod

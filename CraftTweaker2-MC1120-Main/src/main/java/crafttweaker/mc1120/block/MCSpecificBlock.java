@@ -1,5 +1,6 @@
 package crafttweaker.mc1120.block;
 
+import crafttweaker.annotations.ZenDoc;
 import crafttweaker.api.block.*;
 import crafttweaker.api.data.IData;
 import crafttweaker.api.minecraft.CraftTweakerMC;
@@ -25,6 +26,7 @@ public class MCSpecificBlock implements IBlock {
         return Block.REGISTRY.getNameForObject(block).toString();
     }
 
+    @ZenDoc(PackageName = "crafttweaker.block.IBlock")
     @Override
     public IBlockDefinition getDefinition() {
         return CraftTweakerMC.getBlockDefinition(block);

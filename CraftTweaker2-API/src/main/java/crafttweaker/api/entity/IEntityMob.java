@@ -4,8 +4,8 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.player.IPlayer;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.entity.IEntityMob")
 @ZenRegister
+@ZenClass("crafttweaker.entity.IEntityMob")
 public interface IEntityMob extends IEntityCreature {
     
     @ZenMethod

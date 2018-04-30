@@ -17,8 +17,8 @@ import java.util.List;
  *
  * @author Stan Hebben
  */
-@ZenClass("crafttweaker.item.IIngredient")
 @ZenRegister
+@ZenClass("crafttweaker.item.IIngredient")
 public interface IIngredient {
     
     /**

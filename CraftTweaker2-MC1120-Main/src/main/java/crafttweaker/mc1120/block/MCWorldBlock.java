@@ -1,5 +1,6 @@
 package crafttweaker.mc1120.block;
 
+import crafttweaker.annotations.ZenDoc;
 import crafttweaker.api.block.*;
 import crafttweaker.api.data.IData;
 import crafttweaker.api.minecraft.CraftTweakerMC;
@@ -26,6 +27,7 @@ public class MCWorldBlock implements IBlock {
         this.pos = new BlockPos(x, y, z);
     }
 
+    @ZenDoc(PackageName = "crafttweaker.block.IBlock")
     @Override
     public IBlockDefinition getDefinition() {
         return CraftTweakerMC.getBlockDefinition(blocks.getBlockState(pos).getBlock());

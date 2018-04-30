@@ -7,6 +7,6 @@ import stanhebben.zenscript.annotations.*;
 /**
  * @author Stan
  */
-@ZenClass("crafttweaker.event.PlayerSleepInBedEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerSleepInBedEvent")
 public interface PlayerSleepInBedEvent extends IPlayerEvent, IEventPositionable {}

@@ -4,8 +4,8 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.damage.IDamageSource;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.event.EntityLivingAttackedEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.EntityLivingAttackedEvent")
 public interface EntityLivingAttackedEvent extends ILivingEvent, IEventCancelable {
     
     @ZenGetter("damageSource")

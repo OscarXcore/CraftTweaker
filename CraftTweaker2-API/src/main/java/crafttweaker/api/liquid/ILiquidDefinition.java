@@ -9,8 +9,8 @@ import stanhebben.zenscript.annotations.*;
  *
  * @author Stan Hebben
  */
-@ZenClass("crafttweaker.liquid.ILiquidDefinition")
 @ZenRegister
+@ZenClass("crafttweaker.liquid.ILiquidDefinition")
 public interface ILiquidDefinition {
     
     /**

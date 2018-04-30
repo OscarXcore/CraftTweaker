@@ -9,8 +9,8 @@ import stanhebben.zenscript.annotations.*;
 
 import java.util.List;
 
-@ZenClass("crafttweaker.entity.IEntityLivingBase")
 @ZenRegister
+@ZenClass("crafttweaker.entity.IEntityLivingBase")
 public interface IEntityLivingBase extends IEntity {
     
     @ZenGetter

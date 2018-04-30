@@ -4,8 +4,8 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.entity.IEntity;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.event.IEntityEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.IEntityEvent")
 public interface IEntityEvent {
     @ZenGetter("entity")
     IEntity getEntity();

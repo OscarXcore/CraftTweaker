@@ -6,8 +6,8 @@ import crafttweaker.api.block.*;
 import crafttweaker.api.world.IWorld;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.event.IBlockEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.IBlockEvent")
 public interface IBlockEvent extends IEventPositionable {
     
     @ZenGetter("world")

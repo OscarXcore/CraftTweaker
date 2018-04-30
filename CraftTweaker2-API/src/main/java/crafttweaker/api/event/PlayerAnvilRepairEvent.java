@@ -4,8 +4,8 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IItemStack;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.event.PlayerAnvilRepairEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerAnvilRepairEvent")
 public interface PlayerAnvilRepairEvent extends IPlayerEvent {
     
     @ZenGetter("itemResult")

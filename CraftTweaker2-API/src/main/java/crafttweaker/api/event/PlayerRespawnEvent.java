@@ -6,8 +6,8 @@ import stanhebben.zenscript.annotations.*;
 /**
  * @author Stan
  */
-@ZenClass("crafttweaker.event.PlayerRespawnEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerRespawnEvent")
 public interface PlayerRespawnEvent extends IPlayerEvent {
     
     @ZenGetter("endConquered")

@@ -20,8 +20,8 @@ import java.util.List;
  *
  * @author Stan Hebben
  */
-@ZenClass("crafttweaker.entity.IEntity")
 @ZenRegister
+@ZenClass("crafttweaker.entity.IEntity")
 public interface IEntity extends ICommandSender {
     
     @ZenGetter("definition")

@@ -6,8 +6,8 @@ import crafttweaker.util.IntegerRange;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenGetter;
 
-@ZenClass("crafttweaker.entity.IEntityDrop")
 @ZenRegister
+@ZenClass("crafttweaker.entity.IEntityDrop")
 public interface IEntityDrop {
 
 	@ZenGetter("stack")

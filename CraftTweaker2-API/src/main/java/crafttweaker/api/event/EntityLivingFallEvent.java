@@ -4,8 +4,8 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.damage.IDamageSource;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.event.EntityLivingFallEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.EntityLivingFallEvent")
 public interface EntityLivingFallEvent extends ILivingEvent, IEventCancelable {
     
     @ZenGetter("distance")

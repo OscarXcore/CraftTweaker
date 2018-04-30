@@ -3,8 +3,8 @@ package crafttweaker.api.event;
 import crafttweaker.annotations.ZenRegister;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.event.IEventCancelable")
 @ZenRegister
+@ZenClass("crafttweaker.event.IEventCancelable")
 public interface IEventCancelable {
     
     @ZenMethod

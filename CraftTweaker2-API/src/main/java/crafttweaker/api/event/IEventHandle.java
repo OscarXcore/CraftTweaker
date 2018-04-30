@@ -10,8 +10,8 @@ import java.io.Closeable;
  *
  * @author Stan Hebben
  */
-@ZenClass("crafttweaker.event.IEventHandler")
 @ZenRegister
+@ZenClass("crafttweaker.event.IEventHandler")
 public interface IEventHandle extends Closeable {
     
     /**

@@ -16,8 +16,8 @@ import java.util.List;
  *
  * @author Stan Hebben
  */
-@ZenClass("crafttweaker.item.IItemDefinition")
 @ZenRegister
+@ZenClass("crafttweaker.item.IItemDefinition")
 public interface IItemDefinition {
     
     /**

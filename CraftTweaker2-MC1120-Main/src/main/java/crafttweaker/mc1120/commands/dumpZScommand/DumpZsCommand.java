@@ -71,34 +71,59 @@ public class DumpZsCommand extends CraftTweakerCommand {
         } catch(IOException e) {
             e.printStackTrace();
         }
-        
+
+        // Bracket Handlers
         TreeNode<String> bracketNode = root.addChild("Bracket Handlers");
         for(Pair<Integer, IBracketHandler> pair : GlobalRegistry.getPrioritizedBracketHandlers()) {
-            bracketNode.addChild(pair.getClass().getName() + ", priority: " + pair.getKey());
+            String bracketHandler = pair.getValue().toString().replaceAll("(crafttweaker\\.mc\\d+\\.\\w+\\.BracketHandler)", "").replaceAll("(@.+)", "").toLowerCase();
+            if (bracketHandler.contains("damagesource")) bracketHandler = "damageSource";
+            bracketNode.addChild(String.format("&#60;%s&#62;, priority: %d", bracketHandler, pair.getKey()));
         }
-        
+
+        // Types
         TreeNode<String> types = root.addChild("Types");
         GlobalRegistry.getTypes().getTypeMap().forEach((aClass, zenType) -> {
             TreeNode<String> zsType = types.addChild( zenType.getName());
             zsType.addChild(aClass.getName());
         });
         types.children.sort(STRING_TREE_COMPARATOR);
-    
+
+        // Globals
         TreeNode<String> globals = root.addChild("Globals");
-        GlobalRegistry.getGlobals().forEach((s, iZenSymbol) -> {
-            TreeNode<String> globalName = globals.addChild(s);
-            globalName.addChild(iZenSymbol.toString());
-        });
+        GlobalRegistry.getRoot().getPackages().forEach((s1, zenSymbol) -> GlobalRegistry.getGlobals().forEach((s2, iZenSymbol) -> {
+            //TreeNode<String> globalName = globals.addChild(s);
+            //printZenSymbol(s, iZenSymbol, globals);
+            //globalName.addChild(iZenSymbol.toString());
+            //System.out.println(iZenSymbol.toString());
+            switch (iZenSymbol.getClass().getTypeName().replace("stanhebben.zenscript.symbols.", "")) {
+                case "SymbolJavaStaticField":
+                    SymbolJavaStaticField symbol1 = (SymbolJavaStaticField) iZenSymbol;
+                    System.out.println(symbol1);
+                    break;
+                case "SymbolJavaStaticMethod":
+                    SymbolJavaStaticMethod symbol2 = (SymbolJavaStaticMethod) iZenSymbol;
+                    System.out.println(symbol2);
+                    break;
+                case "SymbolJavaStaticGetter":
+                    SymbolJavaStaticGetter symbol3 = (SymbolJavaStaticGetter) iZenSymbol;
+                    System.out.println(symbol3);
+                    break;
+                default:
+                    System.out.println(iZenSymbol.getClass().getTypeName());
+            }
+            if (s1.equalsIgnoreCase(s2)) printZenSymbol(s1, zenSymbol, globals);
+        }));
         globals.children.sort(STRING_TREE_COMPARATOR);
 
-        
+        // Expansions
         TreeNode<String> expansions = root.addChild("Expansions");
         GlobalRegistry.getExpansions().forEach((s, typeExpansion) -> {
             TreeNode<String> exp = expansions.addChild(s);
             exp.addChild(typeExpansion.getClass().getName());
         });
         expansions.children.sort(STRING_TREE_COMPARATOR);
-        
+
+        // Root (Symbol Package)
         TreeNode<String> symbols = root.addChild("Root (Symbol Package)");
         GlobalRegistry.getRoot().getPackages().forEach((s, zenSymbol) -> printZenSymbol(s, zenSymbol, symbols));
         sortTreeNodes(symbols);
@@ -180,7 +205,7 @@ public class DumpZsCommand extends CraftTweakerCommand {
     }
     
     /**
-     * Recursivly prints all zenSymbols if they are Symbol Packages
+     * Recursively prints all zenSymbols if they are Symbol Packages
      */
     private void printZenSymbol(String s, IZenSymbol zenSymbol, TreeNode<String> node){
         if (zenSymbol instanceof SymbolPackage){
@@ -272,14 +297,34 @@ public class DumpZsCommand extends CraftTweakerCommand {
     
             ZenDoc[] doc = jm.getAnnotationsByType(ZenDoc.class);
             if (doc.length > 0){
-                sb.append(encaplseInSpan("########", "green"));
+                //sb.append(encapsulateInSpan("########", "green"));
         
                 for(ZenDoc zenDoc : doc) {
-                    sb.append("<br/>");
-                    sb.append(encaplseInSpan(zenDoc.value(), "green"));
+                    //sb.append("<br/>");
+
+                    String value = cleanZenDocs(zenDoc.value());
+                    if (!value.isEmpty() && !value.equals(" ") && !value.equals("<br/>")) {
+                        sb.append(encapsulateInSpan(String.format("# %s", value), "green"));
+                    }
+                    String PackageName = cleanZenDocs(zenDoc.PackageName());
+                    if (!PackageName.isEmpty() && !PackageName.equals(" ") && !PackageName.equals("<br/>")) {
+                        sb.append(encapsulateInSpan(String.format("# Package Name: %s", PackageName), "green"));
+                    }
+                    String ObjectGetters = cleanZenDocs(zenDoc.ObjectGetters());
+                    if (!ObjectGetters.isEmpty() && !ObjectGetters.equals(" ") && !ObjectGetters.equals("<br/>")) {
+                        sb.append(encapsulateInSpan(String.format("# Ways to get the Object: %s", ObjectGetters), "green"));
+                    }
+                    String ExampleUsages = cleanZenDocs(zenDoc.ExampleUsages());
+                    if (!ExampleUsages.isEmpty() && !ExampleUsages.equals(" ") && !ExampleUsages.equals("<br/>")) {
+                        sb.append(encapsulateInSpan(String.format("# Example Usages: %s", ExampleUsages), "green"));
+                    }
+                    String AdditionalNotes = cleanZenDocs(zenDoc.AdditionalNotes());
+                    if (!AdditionalNotes.isEmpty() && !AdditionalNotes.equals(" ") && !AdditionalNotes.equals("<br/>")) {
+                        sb.append(encapsulateInSpan(String.format("# Additional Notes: %s", AdditionalNotes), "green"));
+                    }
                 }
-        
-                sb.append(encaplseInSpan("<br/>########<br/>", "green"));
+                //sb.append(encapsulateInSpan("<br/>", "green"));
+                //sb.append(encapsulateInSpan("########<br/>", "green"));
             }
             
             sb.append(Modifier.toString(jm.getModifiers()));
@@ -288,7 +333,7 @@ public class DumpZsCommand extends CraftTweakerCommand {
             sb.append(createHoverText(jm.getReturnType().getName(), jm.getReturnType().getSimpleName()));
             
             sb.append(" ");
-            sb.append(encaplseInSpan(jm.getName(), "red"));
+            sb.append(encapsulateInSpan(jm.getName(), "red"));
             sb.append("(");
     
             Class<?>[] paras = jm.getParameterTypes();
@@ -296,7 +341,7 @@ public class DumpZsCommand extends CraftTweakerCommand {
             for(int i = 0; i < paras.length; i++) {
                 
                 for(int j = 0; j < annos[i].length; j++) {
-                    sb.append(encaplseInSpan("@" + annos[i][j].annotationType().getSimpleName() + " ", "gold"));
+                    sb.append(encapsulateInSpan("@" + annos[i][j].annotationType().getSimpleName() + " ", "gold"));
                 }
                 
                 sb.append(createHoverText(paras[i].getName(), paras[i].getSimpleName()));
@@ -313,18 +358,26 @@ public class DumpZsCommand extends CraftTweakerCommand {
         }
         
     }
-    
+
     private String colorClassName(String name){
         int lastDot = name.lastIndexOf(".");
         if (lastDot > 0){
-            return name.substring(0, lastDot + 1) + encaplseInSpan(name.substring(lastDot + 1, name.length()), "DarkOrange");
+            return name.substring(0, lastDot + 1) + encapsulateInSpan(name.substring(lastDot + 1, name.length()), "DarkOrange");
         }else {
-            return encaplseInSpan(name, "DarkOrange");
+            return encapsulateInSpan(name, "DarkOrange");
         }
-        
+    }
+
+    private String cleanZenDocs(String[] docValues) {
+        StringBuilder docValue = new StringBuilder();
+        for (String value : docValues) {
+            if (value.equalsIgnoreCase("")) docValue.append(Formatter.format(value));
+            else docValue.append(Formatter.format(value)).append("<br/>");
+        }
+        return docValue.toString();
     }
     
-    private String encaplseInSpan(String value, String color){
+    private String encapsulateInSpan(String value, String color){
         return "<span style=\"color:"+ color + "\">" + value + "</span>";
     }
     
@@ -357,5 +410,4 @@ public class DumpZsCommand extends CraftTweakerCommand {
         }
         return node;
     }
-
 }

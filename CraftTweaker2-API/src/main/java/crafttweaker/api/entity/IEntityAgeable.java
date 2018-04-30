@@ -3,8 +3,8 @@ package crafttweaker.api.entity;
 import crafttweaker.annotations.ZenRegister;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.entity.IEntityAgeable")
 @ZenRegister
+@ZenClass("crafttweaker.entity.IEntityAgeable")
 public interface IEntityAgeable extends IEntityCreature {
 
     @ZenGetter("growingAge")

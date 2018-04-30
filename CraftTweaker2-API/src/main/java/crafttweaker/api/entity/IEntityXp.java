@@ -8,8 +8,8 @@ import stanhebben.zenscript.annotations.*;
  *
  * @author Stan Hebben
  */
-@ZenClass("crafttweaker.entity.IEntityXp")
 @ZenRegister
+@ZenClass("crafttweaker.entity.IEntityXp")
 public interface IEntityXp extends IEntity {
     
     /**

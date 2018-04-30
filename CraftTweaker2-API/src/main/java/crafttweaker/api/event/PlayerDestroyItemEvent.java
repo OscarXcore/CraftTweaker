@@ -4,8 +4,8 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IItemStack;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.event.PlayerDestroyItemEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerDestroyItemEvent")
 public interface PlayerDestroyItemEvent extends IPlayerEvent{
     
     @ZenGetter("originalItem")

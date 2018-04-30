@@ -11,8 +11,8 @@ import stanhebben.zenscript.annotations.*;
  *
  * @author Stan Hebben
  */
-@ZenClass("crafttweaker.item.IItemTransformer")
 @ZenRegister
+@ZenClass("crafttweaker.item.IItemTransformer")
 public interface IItemTransformer {
     
     /**

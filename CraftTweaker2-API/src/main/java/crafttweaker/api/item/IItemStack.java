@@ -29,8 +29,8 @@ import java.util.List;
  *
  * @author Stan Hebben
  */
-@ZenClass("crafttweaker.item.IItemStack")
 @ZenRegister
+@ZenClass("crafttweaker.item.IItemStack")
 public interface IItemStack extends IIngredient {
     
     /**

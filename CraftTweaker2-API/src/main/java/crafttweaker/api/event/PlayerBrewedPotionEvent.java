@@ -4,8 +4,8 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IItemStack;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.event.PlayerBrewedPotionEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerBrewedPotionEvent")
 public interface PlayerBrewedPotionEvent extends IPlayerEvent {
     
     @ZenGetter("potion")

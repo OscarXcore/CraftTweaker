@@ -6,6 +6,6 @@ import stanhebben.zenscript.annotations.*;
 /**
  * @author Stan
  */
-@ZenClass("crafttweaker.event.PlayerLoggedInEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerLoggedInEvent")
 public interface PlayerLoggedInEvent extends IPlayerEvent {}

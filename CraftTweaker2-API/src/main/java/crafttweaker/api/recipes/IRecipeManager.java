@@ -51,7 +51,7 @@ public interface IRecipeManager {
      * @param ingredients recipe ingredients
      * @param function    recipe function (optional)
      */
-    @ZenDoc("Adds a shaped recipe.")
+
     @ZenMethod
     void addShaped(String name, IItemStack output, IIngredient[][] ingredients, @Optional IRecipeFunction function, @Optional IRecipeAction action);
     

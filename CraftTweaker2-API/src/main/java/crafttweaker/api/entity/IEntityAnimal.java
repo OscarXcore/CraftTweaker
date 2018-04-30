@@ -5,8 +5,8 @@ import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.player.IPlayer;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.entity.IEntityAnimal")
 @ZenRegister
+@ZenClass("crafttweaker.entity.IEntityAnimal")
 public interface IEntityAnimal extends IEntityAgeable {
 
     @ZenMethod

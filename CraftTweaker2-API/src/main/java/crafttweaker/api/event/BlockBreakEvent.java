@@ -4,8 +4,8 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.player.IPlayer;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.event.BlockBreakEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.BlockBreakEvent")
 public interface BlockBreakEvent extends IBlockEvent, IEventCancelable{
     
     @ZenGetter("isPlayer")

@@ -4,8 +4,8 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IItemStack;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.enchantments.IEnchantmentDefinition")
 @ZenRegister
+@ZenClass("crafttweaker.enchantments.IEnchantmentDefinition")
 public interface IEnchantmentDefinition {
     
     @ZenGetter("id")

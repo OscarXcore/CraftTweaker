@@ -16,8 +16,8 @@ import java.util.*;
  *
  * @author Stan Hebben
  */
-@ZenClass("crafttweaker.game.IGame")
 @ZenRegister
+@ZenClass("crafttweaker.game.IGame")
 public interface IGame {
     
     /**

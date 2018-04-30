@@ -8,8 +8,8 @@ import stanhebben.zenscript.annotations.*;
 /**
  * @author Stan
  */
-@ZenClass("crafttweaker.event.PlayerInteractEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerInteractEvent")
 public interface PlayerInteractEvent extends IEventCancelable, IPlayerEvent, IEventPositionable {
 
     @ZenMethod

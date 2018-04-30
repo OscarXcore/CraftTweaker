@@ -11,8 +11,8 @@ import stanhebben.zenscript.annotations.*;
  * @author Stan Hebben
  */
 
-@ZenClass("crafttweaker.entity.IEntityItem")
 @ZenRegister
+@ZenClass("crafttweaker.entity.IEntityItem")
 public interface IEntityItem extends IEntity {
     
     /**

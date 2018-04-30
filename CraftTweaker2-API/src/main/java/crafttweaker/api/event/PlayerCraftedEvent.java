@@ -8,8 +8,8 @@ import stanhebben.zenscript.annotations.*;
 /**
  * @author Stan Hebben
  */
-@ZenClass("crafttweaker.event.PlayerCraftedEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerCraftedEvent")
 public interface PlayerCraftedEvent extends IPlayerEvent {
     
     @ZenGetter("output")

@@ -9,8 +9,8 @@ import stanhebben.zenscript.annotations.*;
 /**
  * @author Stan
  */
-@ZenClass("crafttweaker.event.PlayerBonemealEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerBonemealEvent")
 public interface PlayerBonemealEvent extends IEventCancelable, IPlayerEvent, IProcessableEvent, IEventPositionable {
     
     @ZenGetter("world")

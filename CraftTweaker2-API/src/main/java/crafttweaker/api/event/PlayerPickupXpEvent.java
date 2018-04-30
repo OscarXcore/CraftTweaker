@@ -7,8 +7,8 @@ import stanhebben.zenscript.annotations.*;
 /**
  * @author Stan
  */
-@ZenClass("crafttweaker.event.PlayerPickupXpEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerPickupXpEvent")
 public interface PlayerPickupXpEvent extends IEventCancelable, IPlayerEvent {
     
     @ZenGetter("entityXp")

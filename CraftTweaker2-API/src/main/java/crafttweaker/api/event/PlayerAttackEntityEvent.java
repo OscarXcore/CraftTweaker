@@ -7,8 +7,8 @@ import stanhebben.zenscript.annotations.*;
 /**
  * @author Stan
  */
-@ZenClass("crafttweaker.event.PlayerAttackEntityEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerAttackEntityEvent")
 public interface PlayerAttackEntityEvent extends IEventCancelable, IPlayerEvent {
     
     @ZenGetter("target")

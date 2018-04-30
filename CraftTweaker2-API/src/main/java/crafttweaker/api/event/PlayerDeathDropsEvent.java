@@ -11,8 +11,8 @@ import java.util.List;
 /**
  * @author Stan
  */
-@ZenClass("crafttweaker.event.PlayerDeathDropsEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerDeathDropsEvent")
 public interface PlayerDeathDropsEvent extends IPlayerEvent {
     
     @ZenGetter("items")

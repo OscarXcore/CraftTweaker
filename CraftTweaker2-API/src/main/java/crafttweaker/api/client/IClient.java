@@ -9,8 +9,8 @@ import stanhebben.zenscript.annotations.*;
  *
  * @author Stan Hebben
  */
-@ZenClass("crafttweaker.api.IClient")
 @ZenRegister
+@ZenClass("crafttweaker.api.IClient")
 public interface IClient {
     
     /**

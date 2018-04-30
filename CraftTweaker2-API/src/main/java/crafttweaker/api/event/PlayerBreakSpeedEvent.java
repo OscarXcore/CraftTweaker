@@ -5,8 +5,8 @@ import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.block.*;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.event.PlayerBreakSpeedEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerBreakSpeedEvent")
 public interface PlayerBreakSpeedEvent extends IPlayerEvent, IEventPositionable, IEventCancelable {
     
     @ZenGetter("blockState")

@@ -3,8 +3,8 @@ package crafttweaker.api.entity;
 import crafttweaker.annotations.ZenRegister;
 import stanhebben.zenscript.annotations.*;
 
-@ZenClass("crafttweaker.entity.IEntityEquipmentSlot")
 @ZenRegister
+@ZenClass("crafttweaker.entity.IEntityEquipmentSlot")
 public interface IEntityEquipmentSlot {
     
     @ZenGetter("index")

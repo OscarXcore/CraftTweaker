@@ -8,8 +8,8 @@ import stanhebben.zenscript.annotations.*;
 /**
  * @author Stanneke
  */
-@ZenClass("crafttweaker.liquid.ILiquidStack")
 @ZenRegister
+@ZenClass("crafttweaker.liquid.ILiquidStack")
 public interface ILiquidStack extends IIngredient {
     
     @ZenGetter("definition")

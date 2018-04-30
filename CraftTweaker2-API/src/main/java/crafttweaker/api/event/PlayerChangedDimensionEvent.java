@@ -7,8 +7,8 @@ import stanhebben.zenscript.annotations.*;
 /**
  * @author Stan
  */
-@ZenClass("crafttweaker.event.PlayerChangedDimensionEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerChangedDimensionEvent")
 public interface PlayerChangedDimensionEvent extends IPlayerEvent {
     
     @ZenGetter("from")

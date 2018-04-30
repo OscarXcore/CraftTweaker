@@ -12,8 +12,8 @@ import stanhebben.zenscript.annotations.ZenClass;
  *
  * @author Stan Hebben
  */
-@ZenClass("crafttweaker.item.IItemCondition")
 @ZenRegister
+@ZenClass("crafttweaker.item.IItemCondition")
 public interface IItemCondition {
     
     /**

@@ -9,8 +9,8 @@ import stanhebben.zenscript.annotations.*;
 /**
  * @author Stan
  */
-@ZenClass("crafttweaker.event.PlayerUseHoeEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.PlayerUseHoeEvent")
 public interface PlayerUseHoeEvent extends IEventCancelable, IPlayerEvent, IProcessableEvent, IEventPositionable {
     
     @ZenGetter("item")

@@ -8,8 +8,8 @@ import stanhebben.zenscript.annotations.*;
 
 import java.util.List;
 
-@ZenClass("crafttweaker.event.BlockHarvestDropsEvent")
 @ZenRegister
+@ZenClass("crafttweaker.event.BlockHarvestDropsEvent")
 public interface BlockHarvestDropsEvent extends IBlockEvent {
     
     @ZenGetter("dropChance")

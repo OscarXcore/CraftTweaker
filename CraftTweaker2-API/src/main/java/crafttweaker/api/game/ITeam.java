@@ -5,8 +5,8 @@ import stanhebben.zenscript.annotations.*;
 
 import java.util.List;
 
-@ZenClass("crafttweaker.game.ITeam")
 @ZenRegister
+@ZenClass("crafttweaker.game.ITeam")
 public interface ITeam {
     
     @ZenGetter("name")
